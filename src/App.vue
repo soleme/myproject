@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    안녕하세요
+    <vue-person
+        ref="VuePerson"
+        name="dorosy"
+    />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VuePerson from './components/VuePerson.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    VuePerson,
+  },
+  mounted() {
+    const name = this.$refs.VuePerson.name
+    console.log('name', name) // name dorosy
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
